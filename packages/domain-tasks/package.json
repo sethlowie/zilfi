@@ -1,0 +1,23 @@
+{
+  "name": "domain-tasks",
+  "main": "src/index.ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@zilfi/core": "workspace:*",
+    "@zilfi/http": "workspace:*",
+    "@zilfi/types": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.1.6"
+  }
+}
