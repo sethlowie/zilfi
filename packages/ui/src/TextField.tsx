@@ -10,13 +10,31 @@ type TextFieldProps = {
 
 const Input = (props: TextFieldProps) => {
   const value = useReadValue(props.value.atom);
+  const dirty = useReadValue(props.value.dirty);
   return (
     <input
       type={props.type}
       value={value}
-      onChange={(e) => props.value.atom.set(e.target.value)}
+      onChange={(e) => {
+        props.value.dirty.set(true);
+        props.value.atom.set(e.target.value);
+      }}
+      onBlur={() => {
+        if (dirty) {
+          props.value.shouldValidate.set(true);
+        }
+      }}
     />
   );
+};
+
+const Error = (props: TextFieldProps) => {
+  const error = useReadValue(props.value.error);
+  return props.value.error.value ? (
+    <div className="label">
+      <span className="label-text-alt">{error}</span>
+    </div>
+  ) : null;
 };
 
 export const TextField = (props: TextFieldProps) => {
@@ -28,10 +46,7 @@ export const TextField = (props: TextFieldProps) => {
         </div>
       ) : null}
       <Input {...props} />
-      <div className="label">
-        <span className="label-text-alt">Bottom Left label</span>
-        <span className="label-text-alt">Bottom Right label</span>
-      </div>
+      <Error {...props} />
     </label>
   );
 };

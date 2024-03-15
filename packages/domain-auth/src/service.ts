@@ -1,5 +1,5 @@
 import { AuthIO } from "./io";
-import { Store, createStore } from "@zilfi/core";
+import { Atom, createAtom } from "@zilfi/core";
 
 interface GuestUser {
   status: "guest";
@@ -13,9 +13,9 @@ interface AuthenticatedUser {
 type AuthStatus = GuestUser | AuthenticatedUser;
 
 export class AuthService {
-  #authStatus: Store<AuthStatus>;
+  #authStatus: Atom<AuthStatus>;
   constructor(private readonly io: AuthIO) {
-    this.#authStatus = createStore({
+    this.#authStatus = createAtom({
       status: "guest",
     } as AuthStatus);
   }
