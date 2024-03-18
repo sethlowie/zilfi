@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "domain-auth": "workspace:*"
+    "domain-auth": "workspace:*",
+    "domain-benchmark": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
