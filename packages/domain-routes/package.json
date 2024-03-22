@@ -1,5 +1,5 @@
 {
-  "name": "domain-auth",
+  "name": "domain-routes",
   "main": "src/index.ts",
   "private": true,
   "version": "0.0.0",
@@ -7,16 +7,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@zilfi/core": "workspace:*",
-    "@zilfi/http": "workspace:*",
-    "server": "workspace:*"
+    "@zilfi/core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "vite": "^5.1.6"
   }
 }

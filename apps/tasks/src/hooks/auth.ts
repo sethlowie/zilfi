@@ -1,5 +1,5 @@
 import { useControllers } from "~/hooks";
-import { useDerivedValue } from "@zilfi/react";
+import { useDerivedValue, useReadValue } from "@zilfi/react";
 
 export const useAuthStatus = () => {
   const ctrls = useControllers();
@@ -7,4 +7,10 @@ export const useAuthStatus = () => {
   return useDerivedValue(ctrls.auth.getAuthStatus(), (auth) => {
     return auth.status;
   });
+};
+
+export const useAuthInitialized = () => {
+  const ctrls = useControllers();
+
+  return useReadValue(ctrls.auth.getInitialized());
 };

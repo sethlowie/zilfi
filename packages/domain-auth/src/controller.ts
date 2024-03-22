@@ -1,7 +1,19 @@
 import { AuthService } from "./service";
 
 export class Auth {
-  constructor(private readonly authService: AuthService) { }
+  constructor(private readonly authService: AuthService) {
+    this.checkExistingUser().then(() => {
+      this.authService.setInitialized();
+    });
+  }
+
+  getInitialized() {
+    return this.authService.getInitialized();
+  }
+
+  async checkExistingUser() {
+    return this.authService.checkExistingUser();
+  }
 
   getAuthStatus() {
     return this.authService.getAuthStatus();

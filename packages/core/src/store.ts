@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export class Atom<T> {
   #value: T;
+
   constructor(initialValue: T) {
     this.#value = initialValue;
   }

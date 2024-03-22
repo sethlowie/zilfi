@@ -102,6 +102,9 @@ importers:
       domain-benchmark:
         specifier: workspace:*
         version: link:../domain-benchmark
+      domain-routes:
+        specifier: workspace:*
+        version: link:../domain-routes
     devDependencies:
       typescript:
         specifier: ^5.2.2
@@ -162,6 +165,9 @@ importers:
       '@zilfi/core':
         specifier: workspace:*
         version: link:../core
+      '@zilfi/http':
+        specifier: workspace:*
+        version: link:../http
       server:
         specifier: workspace:*
         version: link:../server
@@ -188,6 +194,19 @@ importers:
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
+      typescript:
+        specifier: ^5.2.2
+        version: 5.3.3
+      vite:
+        specifier: ^5.1.6
+        version: 5.1.6
+
+  packages/domain-routes:
+    dependencies:
+      '@zilfi/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
       typescript:
         specifier: ^5.2.2
         version: 5.3.3

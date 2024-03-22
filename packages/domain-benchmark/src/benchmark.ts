@@ -58,15 +58,11 @@ export class Benchmark {
     for (let j = 0; j < 10; j++) {
       for (let i = 0; i < nodeCount; i++) {
         requestAnimationFrame(() => {
-          const startTime = performance.now();
           const id = `node-${i}`;
           const node = this.#nodes.get(id);
           if (node) {
             node.set((prev) => ({ ...prev, on: !prev.on }));
           }
-
-          const endTime = performance.now();
-          console.log(`Iteration ${i}: ${endTime - startTime}ms`);
         });
         await delay(50);
       }

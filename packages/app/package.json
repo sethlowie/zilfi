@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "domain-auth": "workspace:*",
-    "domain-benchmark": "workspace:*"
+    "domain-benchmark": "workspace:*",
+    "domain-routes": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
