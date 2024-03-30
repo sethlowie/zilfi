@@ -1,4 +1,4 @@
-import { Aurora, Button } from "@zilfi/ui"
+import { Aurora } from "@zilfi/ui"
 
 function App() {
   return (
