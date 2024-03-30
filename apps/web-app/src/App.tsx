@@ -1,7 +1,14 @@
+import { Aurora, Button } from "@zilfi/ui"
+
 function App() {
   return (
-    <div>
-      hello world
+    <div
+      className="bg-danger w-full h-full border font-main"
+    >
+
+    <Aurora>
+      
+    </Aurora>
     </div>
   );
 }
